@@ -1,22 +1,15 @@
 import mysql from 'mysql'
-
+import dotenv from "dotenv";
+dotenv.config({
+  path: "./.env",
+});
 const connection = mysql.createConnection({
-       host:'127.0.0.1',
-       user:'root',
-       password:'',
-       database:'man'
+       host:`${process.env.host}`,
+       user:`${process.env.user}`,
+       password:`${process.env.password}`,
+       database:`${process.env.database}`
 })
+
 
 export default connection
 
-// import { createPool } from "mysql";
-// export const connect = async()=>{
-//        const connection = await createPool({
-//               host : "127.0.0.1",
-//               user:"root",
-//               password:"",
-//               database:"man",
-//               connectionLimit:10
-//        })
-//        return connection
-// }

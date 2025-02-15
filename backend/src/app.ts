@@ -19,7 +19,6 @@ const port = process.env.port || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
-
 connection.connect((err) => {
   if (err) {
     console.log("err while connecting to databse : ", err);
